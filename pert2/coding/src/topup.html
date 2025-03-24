@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP UP DONGKAK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeIn: "fadeIn 2s ease-in-out",
+                        bounceSlow: "bounce 3s infinite",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- AUDIO BACKGROUND -->
+    <audio id="background-music" autoplay loop>
+        <source src="audio/303pm-sharou.mp3" type="audio/mpeg">
+        <source src="audio/303pm-sharou.ogg" type="audio/ogg">
+    </audio>
+    
+    
+    
+    
+
+    <!-- HEADER -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-800 py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-3xl font-bold animate-fadeIn">TOP UP DONGKAK</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Games</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Top-Up</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto my-10 px-6">
+        <!-- SECTION: TITLE -->
+        <section class="bg-gray-800 p-8 rounded-lg shadow-lg animate-fadeIn text-center">
+            <h2 class="text-4xl font-bold mb-4">Top-Up Game Favoritmu!</h2>
+            <p class="text-lg text-gray-300">Pilih game, masukkan ID, dan lakukan pembayaran dengan mudah.</p>
+        </section>
+
+        <!-- SECTION: GAME LIST -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+            <!-- Mobile Legends -->
+            <div class="bg-gray-700 p-4 rounded-lg shadow-md text-center hover:bg-gray-600 cursor-pointer transform hover:scale-105 transition duration-300">
+                <img src="https://i0.wp.com/www.esatu.id/wp-content/uploads/2024/09/top-up-diamond-mobile-legends.png?fit=786%2C439&ssl=1"
+                     alt="Mobile Legends" 
+                     class="mx-auto mb-2 w-50 h-45 object-contain animate-bounceSlow">
+                <p class="text-lg font-semibold">Mobile Legends</p>
+            </div>
+            <!-- Valorant -->
+            <div class="bg-gray-700 p-4 rounded-lg shadow-md text-center hover:bg-gray-600 cursor-pointer transform hover:scale-105 transition duration-300">
+                <img src="https://www.playop.net/wp-content/uploads/2020/03/Valorant.jpg"
+                     alt="Valorant" 
+                     class="mx-auto mb-2 w-50 h-45 object-contain animate-bounceSlow">
+                <p class="text-lg font-semibold">Valorant</p>
+            </div>
+            <!-- PUBG -->
+            <div class="bg-gray-700 p-4 rounded-lg shadow-md text-center hover:bg-gray-600 cursor-pointer transform hover:scale-105 transition duration-300">
+                <img src="https://s.kaskus.id/images/2019/03/30/7941685_20190330031326.jpg"
+                     alt="PUBG" 
+                     class="mx-auto mb-2 w-50 h-45 object-contain animate-bounceSlow">
+                <p class="text-lg font-semibold">PUBG</p>
+            </div>
+        </div>
+
+        <!-- SECTION: TOP-UP FORM -->
+        <section class="mt-10 bg-gray-800 p-8 rounded-lg shadow-lg animate-fadeIn">
+            <h2 class="text-3xl font-bold mb-4 text-center">Form Top-Up</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Masukkan ID Game" 
+                       class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <select class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <option>Pilih Nominal</option>
+                    <option>10.000</option>
+                    <option>50.000</option>
+                    <option>100.000</option>
+                </select>
+                <button type="submit" class="w-full bg-yellow-400 text-gray-900 py-3 rounded-lg hover:bg-yellow-500 transition duration-300">
+                    Top-Up Sekarang
+                </button>
+            </form>
+        </section>
+
+        <!-- SECTION: MUSIC CONTROL -->
+        <div class="text-center mt-6">
+            <button onclick="document.getElementById('background-music').play()" 
+                    class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+                Play Music
+            </button>
+            <button onclick="document.getElementById('background-music').pause()" 
+                    class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300">
+                Pause Music
+            </button>
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 py-4 text-center mt-10">
+        <p>&copy; 2025 TOP UP DONGKAK. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
