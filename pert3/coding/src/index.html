@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Adam</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f6f9;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-profile {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .about-section, .skills-section {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      margin-top: 20px;
+    }
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Asli -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten Profil -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card card-profile text-center p-4 mb-4">
+          <div class="card-body">
+            <img src="assets/profileweb.jpg" alt="Foto Profil" class="profile-img mb-3">
+            <h4 class="mb-0">Adam Putra Pratama</h4>
+            <p class="text-muted mb-1">Fakultas Ilmu Komputer</p>
+            <p class="text-muted mb-3">Universitas Esa Unggul</p>
+            <div class="d-flex justify-content-center gap-2">
+              <button type="button" class="btn btn-primary">Tangerang</button>
+              <button type="button" class="btn btn-outline-primary">06 Desember 2004</button>
+            </div>
+
+            <!-- Link Sosial Media -->
+            <div class="d-flex justify-content-center gap-3 mt-4">
+              <a href="https://instagram.com/usernamekamu" target="_blank" class="btn btn-outline-danger">
+                <i class="bi bi-instagram"></i> Instagram
+              </a>
+              <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline-success">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
+              <a href="https://github.com/usernamekamu" target="_blank" class="btn btn-outline-dark">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="about-section">
+          <h5 class="text-center fw-bold mb-3">ABOUT ME</h5>
+          <p>Saya adalah seorang mahasiswa Fakultas Ilmu Komputer yang tertarik pada pengembangan web, desain UI/UX, dan teknologi digital. Saat ini saya sedang mengembangkan beberapa proyek pribadi seperti NyxiaStore.com Tempat TopUp Game Online Bisa Dicari Di Chrome.</p>
+          <p>Saya percaya bahwa belajar adalah proses seumur hidup. Saya senang mengeksplorasi hal baru, bekerja dalam tim, dan terus meningkatkan kemampuan saya baik secara teknis maupun interpersonal.</p>
+        </div>
+
+        <!-- My Skills -->
+        <div class="skills-section">
+          <h5 class="text-center fw-bold mb-3">MY SKILLS</h5>
+
+          <p class="mb-1">HTML</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-success" style="width: 30%">30%</div>
+          </div>
+
+          <p class="mb-1">CSS</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 30%">30%</div>
+          </div>
+
+          <p class="mb-1">JavaScript</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-warning" style="width: 55%">55%</div>
+          </div>
+
+          <p class="mb-1">PHP</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" style="width: 50%">50%</div>
+          </div>
+
+          <p class="mb-1">Laravel</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-danger" style="width: 40%">40%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p class="text-muted mb-0">&copy; 2024</p>
+  </footer>
+
+  <!-- Script Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
