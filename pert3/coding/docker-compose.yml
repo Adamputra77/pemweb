@@ -7,4 +7,4 @@ services:
     volumes:
     - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     - ./src:/usr/share/nginx/html
-    - ./latihan:/usr/share/nginx/html/latihan
+    - ./latihan:/usr/share/nginx/html/latihan7 7\7N 
