@@ -113,3 +113,63 @@ Membangun sistem digital berbasis web yang terdiri dari:
 
 ## ✅ 6. ARSITEKTUR SISTEM
 
+```
+[Frontend Blade/Tailwind] → [Laravel Controller] → [Model] → [MySQL]
+                           ➣ API (Sanctum Protected)
+                           ➣ Midtrans, WhatsApp API, SMTP Email
+```
+
+---
+
+## ✅ 7. STRUKTUR FOLDER LARAVEL (REKOMENDASI)
+
+```
+app/
+├— Http/Controllers/
+│   ├— HRM/
+│   ├— LMS/
+│   └— API/
+├— Models/
+│   ├— Employee.php
+│   ├— Student.php
+│   ├— Quiz.php
+├— Services/
+│   ├— MidtransService.php
+│   └— WhatsAppService.php
+├— Notifications/
+│   └— PaymentSuccessNotification.php
+resources/views/
+routes/
+├— web.php
+└— api.php
+```
+
+---
+
+## ✅ 8. TEKNOLOGI WAJIB UNTUK TEAM CODING
+
+| Fungsi                | Tools/Library           |
+| --------------------- | ----------------------- |
+| Backend Framework     | Laravel 10+             |
+| Database              | MySQL                   |
+| Authentication        | Laravel Sanctum         |
+| Frontend              | Blade + Tailwind        |
+| PDF Sertifikat        | DomPDF                  |
+| Pembayaran            | Midtrans Snap API       |
+| WhatsApp Notification | Wablas / API Gateway WA |
+| Email Notification    | Laravel Mail / SMTP     |
+
+---
+
+## ✅ 9. FASE PENGEMBANGAN
+
+1. **Setup Project + Git**
+2. **Build Modul Company Profile**
+3. **Bangun HRM dan Absensi Pegawai**
+4. **Bangun LMS + Modul & Quiz**
+5. **Integrasi API Midtrans + WA**
+6. **Testing Modul + Dummy Data**
+7. **Deployment dan Dokumentasi API**
+
+---
+
