@@ -246,6 +246,3 @@ Setelah struktur DB mantap, kita lanjut buat:
 * Sertifikat berhasil terbit
 
 ---
-
-> **Rekomendasi: Mulai dari Database dulu.**
-> Kalau kamu setuju, saya bisa langsung bantu buatkan skema migrasi Laravel-nya.
