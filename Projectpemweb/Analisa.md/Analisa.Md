@@ -199,4 +199,53 @@ Batch --> Certificate
 
 ---
 
-Kalau kamu butuh desain REST API lengkap atau struktur database Laravel-nya juga, tinggal bilang saja. Mau dilanjut ke bagian mana dulu?
+---
+
+### ✅ **1. Struktur Database & Relasi (Laravel Migration)**
+
+Kenapa duluan?
+
+* Ini adalah **fondasi** dari semua fitur.
+* Tanpa relasi yang jelas, API dan fitur di atasnya bisa kacau.
+
+**Yang disiapkan:**
+
+* `users` (admin, tutor, student)
+* `branches` (cabang pusat/citra)
+* `batches` (bootcamp per periode)
+* `modules`, `quizzes`, `grades`
+* `enrollments`
+* `payments`
+* `certificates`
+
+---
+
+### ⏭️ Setelah itu:
+
+### ✅ **2. REST API Design (Laravel Resource/API Resource)**
+
+Setelah struktur DB mantap, kita lanjut buat:
+
+* API endpoint: daftar, ikut batch, akses materi, quiz, nilai
+* API untuk Admin dan Tutor: input materi, nilai, jadwal
+
+---
+
+### ✅ **3. Midtrans Integration**
+
+* Setup API callback (webhook)
+* Tagihan otomatis berdasarkan batch
+* Konfirmasi pembayaran
+
+---
+
+### ✅ **4. WhatsApp + Email Notification**
+
+* Pengingat jadwal
+* Status pembayaran
+* Sertifikat berhasil terbit
+
+---
+
+> **Rekomendasi: Mulai dari Database dulu.**
+> Kalau kamu setuju, saya bisa langsung bantu buatkan skema migrasi Laravel-nya.
