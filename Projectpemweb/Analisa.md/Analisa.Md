@@ -1,175 +1,202 @@
-# 🔍 METODE ANALISIS SISTEM DIGITAL PERUSAHAAN PENDIDIKAN (SPESIFIK UNTUK DEVELOPER)
-
-## 📌 TUJUAN
-Membangun sistem digital berbasis web yang terdiri dari:
-- Company Profile
-- Human Resource Management (HRM)
-- Learning Management System (LMS)
-- API Services
+Berikut adalah versi **Markdown lengkap** dari analisa sistem digital pendidikan berbasis **Bootcamp** seperti Ruangguru, menggunakan Laravel dan API.
 
 ---
 
-## ✅ 1. ANALISIS KEBUTUHAN (Requirement Analysis)
+# 🧩 Analisa Sistem Bootcamp Digital (Laravel + API)
 
-### 📌 Teknik:
-- Wawancara Admin Company, HCM, dan LMS
-- Studi dokumen operasional manual
-- Benchmark sistem LMS/HRM modern
+## 📌 1. What — Apa yang Dibuat?
 
-### 📌 Hasil:
-**User Role & Modul yang dibutuhkan:**
+Sistem pendidikan digital berbasis **Bootcamp** dengan fitur:
 
-| Role         | Modul yang Diakses                                     |
-|--------------|--------------------------------------------------------|
-| Admin Company| Home, About Us, Blog, Contact Us, Testimoni            |
-| Admin HRM    | Pegawai, Departemen, Cabang, Absensi, Gaji, Cuti, Event|
-| Admin LMS    | Siswa, Guru, Modul, Quiz, Nilai, Sertifikat, Pembayaran, Notifikasi|
-| Siswa        | Modul, Quiz, Nilai, Sertifikat                         |
-| Guru         | Modul, Nilai, Quiz                                     |
+* **Company Profile**
+* **HRM System**
+* **Bootcamp LMS**
+* **Pembayaran Midtrans**
+* **Notifikasi WhatsApp & Email**
+* **Sertifikat Otomatis**
+* **API First Design**
 
 ---
 
-## ✅ 2. ANALISIS PIECES (Fokus Teknologi)
+## 🧭 2. Why — Mengapa Menggunakan Bootcamp?
 
-| Aspek       | Permasalahan Saat Ini                 | Solusi Digital yang Diberikan         |
-|-------------|----------------------------------------|----------------------------------------|
-| Performance | Absensi manual, penggajian lama        | Otomatisasi absensi dan slip gaji     |
-| Information | Modul/manual disimpan terpisah         | Centralized module system             |
-| Economy     | Biaya operasional tinggi (manual)      | Hemat biaya cetak & kertas            |
-| Control     | Tidak ada hak akses                    | Multi-role system + autentikasi token |
-| Efficiency  | Banyak pengulangan tugas (pengiriman materi, slip gaji) | Otomatisasi proses |
-| Service     | Kurang notifikasi ke user              | Email & WhatsApp notification system  |
+* Fokus pada **hasil cepat** dan **terukur**
+* Cocok untuk **pembelajaran intensif 3–6 bulan**
+* Daya tarik tinggi bagi pencari kerja / fresh graduate
+* Sistem lebih **terstruktur dan terukur**
 
 ---
 
-## ✅ 3. ANALISIS SWOT (TEKNIS)
+## 👤 3. Who — Siapa Pengguna Sistem?
 
-| Kategori      | Detail Spesifik untuk Developer |
-|---------------|-------------------------------|
-| **Strength**  | Laravel ecosystem kuat, bisa gunakan package Laravel Cashier, Sanctum, DomPDF, Midtrans |
-| **Weakness**  | Ketergantungan pada layanan pihak ketiga (Midtrans, WA API), butuh dokumentasi rapi |
-| **Opportunity** | API bisa dijual sebagai SaaS ke lembaga lain (multitenancy) |
-| **Threat**    | Jika token API tidak aman, bisa bocor data siswa/gaji |
-
----
-
-## ✅ 4. ANALISIS 5W1H (DEVELOPER-FRIENDLY)
-
-| Aspek | Detail Teknis |
-|-------|---------------|
-| **What** | Sistem Web Laravel + MySQL + Midtrans + WhatsApp API |
-| **Why**  | Untuk digitalisasi total operasional lembaga pendidikan |
-| **Who**  | 4 Role utama (Admin Company, Admin HRM, Admin LMS, Siswa/Guru) |
-| **Where** | Diakses melalui domain utama (subdomain untuk admin bisa dibuat) |
-| **When**  | Dikerjakan dalam 3 fase: desain → development → testing |
-| **How**   | Modular Laravel Project, MVC Pattern, REST API, Token Auth |
+* `Admin Pusat` – Mengelola seluruh sistem
+* `Admin HRM` – Mengelola karyawan, tutor, absensi
+* `Admin LMS` – Mengelola batch bootcamp, materi, peserta
+* `Tutor / Instruktur` – Mengajar sesuai batch
+* `Peserta Bootcamp` – Mengikuti pelatihan
+* `Branch Manager` – Mengelola cabang (Pusat, Citra, dll)
 
 ---
 
-## ✅ 5. USE CASE UTAMA (UNTUK UML & KODING)
+## 🗓️ 4. When — Kapan Digunakan?
 
-### 📌 Modul: HRM (Admin HCM)
-
-- **Manage Pegawai**
-  - `GET /pegawai`
-  - `POST /pegawai`
-  - `PUT /pegawai/{id}`
-  - `DELETE /pegawai/{id}`
-
-- **Absensi**
-  - Pegawai absen → `POST /absensi`
-  - Admin lihat rekap → `GET /absensi?date=`
-
-- **Gaji**
-  - Generate slip otomatis → `POST /gaji/generate`
-  - Download slip → `GET /gaji/download/{id}`
+* Saat membuka batch bootcamp baru
+* Selama proses pembelajaran berlangsung
+* Setelah selesai untuk sertifikasi
 
 ---
 
-### 📌 Modul: LMS (Admin LMS)
+## 🌐 5. Where — Dimana Digunakan?
 
-- **Modul Pembelajaran**
-  - `GET /modul`
-  - `POST /modul`
-  - `PUT /modul/{id}`
-  - File: Upload PDF/Video (disimpan di storage Laravel)
-
-- **Quiz & Nilai**
-  - Guru buat quiz → `POST /quiz`
-  - Siswa jawab → `POST /quiz/jawab`
-  - Penilaian otomatis/manual
-
-- **Sertifikat**
-  - Setelah siswa lulus: `GET /sertifikat/{id}` → hasilkan PDF
-
-- **Pembayaran**
-  - Integrasi Midtrans: token dari Snap, webhook listener
-
-- **Notifikasi**
-  - Email: SMTP (Mailtrap/Gmail Sendgrid)
-  - WhatsApp: Kirim API `POST /notif/wa`
+* Website publik (Landing page + Pendaftaran)
+* Admin panel (Manajemen internal)
+* API (Untuk Mobile App, Notifikasi, dll)
 
 ---
 
-## ✅ 6. ARSITEKTUR SISTEM
+## ⚙️ 6. How — Cara Sistem Bekerja
 
+1. User mendaftar bootcamp (pilih batch & cabang)
+2. Admin verifikasi dan alokasikan peserta
+3. Tutor mengajar berdasarkan jadwal batch
+4. Peserta menyelesaikan modul, quiz, dan tugas
+5. Sistem memberikan nilai & terbitkan sertifikat
+6. Pembayaran melalui Midtrans
+7. Semua aktivitas dapat diakses via API
+
+---
+
+# 🧱 Struktur Bootcamp
+
+| Fitur              | Penjelasan                                               |
+| ------------------ | -------------------------------------------------------- |
+| **Batch Bootcamp** | Kurikulum intensif 3–6 bulan per cabang                  |
+| **Modul & Materi** | Materi per minggu, berbasis video/PDF/tugas              |
+| **Quiz & Nilai**   | Penilaian otomatis / manual                              |
+| **Sertifikat**     | Otomatis setelah kelulusan                               |
+| **Tutor**          | Terdaftar sesuai batch dan cabang                        |
+| **Jadwal**         | Rata-rata 2–3 sesi per minggu (total 48–72 sesi/6 bulan) |
+| **Pembayaran**     | Flat atau cicilan, terhubung dengan Midtrans             |
+| **Notifikasi**     | Email & WhatsApp terintegrasi API                        |
+
+---
+
+# 🧠 SWOT Analysis Bootcamp
+
+| Kategori          | Analisa                                                                 |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Strengths**     | - Fokus hasil nyata<br>- Kurikulum jelas<br>- Cocok untuk skill upgrade |
+| **Weaknesses**    | - Butuh tutor ahli<br>- Manajemen batch & jadwal kompleks               |
+| **Opportunities** | - Banyak market<br>- Bisa hybrid offline/online                         |
+| **Threats**       | - Kompetitor besar<br>- Ketergantungan pada tutor/konten                |
+
+---
+
+# 🔄 ERD Bootcamp (PlantUML)
+
+```plantuml
+@startuml
+
+entity "Branch" as Branch {
+  +id
+  +name
+  +location
+}
+
+entity "Bootcamp Batch" as Batch {
+  +id
+  +name
+  +start_date
+  +end_date
+  +branch_id
+}
+
+entity "User" as User {
+  +id
+  +name
+  +email
+  +role [Admin, Tutor, Student]
+}
+
+entity "Tutor Assignment" as TutorAssign {
+  +id
+  +tutor_id
+  +batch_id
+}
+
+entity "Enrollment" as Enroll {
+  +id
+  +user_id
+  +batch_id
+  +status
+}
+
+entity "Module" as Module {
+  +id
+  +batch_id
+  +title
+  +content_url
+}
+
+entity "Quiz" as Quiz {
+  +id
+  +module_id
+  +question
+}
+
+entity "Grade" as Grade {
+  +id
+  +user_id
+  +quiz_id
+  +score
+}
+
+entity "Certificate" as Certificate {
+  +id
+  +user_id
+  +batch_id
+  +issued_at
+}
+
+entity "Payment" as Payment {
+  +id
+  +user_id
+  +batch_id
+  +amount
+  +status
+}
+
+Branch --> Batch
+Batch --> Module
+Batch --> TutorAssign
+User --> TutorAssign : tutor_id
+User --> Enroll
+Enroll --> Batch
+Module --> Quiz
+User --> Grade
+Quiz --> Grade
+User --> Payment
+Batch --> Payment
+User --> Certificate
+Batch --> Certificate
+
+@enduml
 ```
-[Frontend Blade/Tailwind] → [Laravel Controller] → [Model] → [MySQL]
-                           ➣ API (Sanctum Protected)
-                           ➣ Midtrans, WhatsApp API, SMTP Email
-```
 
 ---
 
-## ✅ 7. STRUKTUR FOLDER LARAVEL (REKOMENDASI)
+# ✅ Next Step untuk Tim Dev
 
-```
-app/
-├— Http/Controllers/
-│   ├— HRM/
-│   ├— LMS/
-│   └— API/
-├— Models/
-│   ├— Employee.php
-│   ├— Student.php
-│   ├— Quiz.php
-├— Services/
-│   ├— MidtransService.php
-│   └— WhatsAppService.php
-├— Notifications/
-│   └— PaymentSuccessNotification.php
-resources/views/
-routes/
-├— web.php
-└— api.php
-```
+1. Buat model Laravel: `User`, `Branch`, `Batch`, `Module`, `Quiz`, `Grade`, `Payment`, `Certificate`
+2. Buat API endpoint (Laravel Sanctum / Passport):
+
+   * `/api/enrollments`
+   * `/api/batches`
+   * `/api/grades`
+   * `/api/certificates`
+3. Integrasikan Midtrans dan WhatsApp Gateway (qontak, wablas, dll)
+4. Siapkan Dashboard Admin (LMS, HRM, Payment)
 
 ---
 
-## ✅ 8. TEKNOLOGI WAJIB UNTUK TEAM CODING
-
-| Fungsi                | Tools/Library           |
-| --------------------- | ----------------------- |
-| Backend Framework     | Laravel 10+             |
-| Database              | MySQL                   |
-| Authentication        | Laravel Sanctum         |
-| Frontend              | Blade + Tailwind        |
-| PDF Sertifikat        | DomPDF                  |
-| Pembayaran            | Midtrans Snap API       |
-| WhatsApp Notification | Wablas / API Gateway WA |
-| Email Notification    | Laravel Mail / SMTP     |
-
----
-
-## ✅ 9. FASE PENGEMBANGAN
-
-1. **Setup Project + Git**
-2. **Build Modul Company Profile**
-3. **Bangun HRM dan Absensi Pegawai**
-4. **Bangun LMS + Modul & Quiz**
-5. **Integrasi API Midtrans + WA**
-6. **Testing Modul + Dummy Data**
-7. **Deployment dan Dokumentasi API**
-
----
-
+Kalau kamu butuh desain REST API lengkap atau struktur database Laravel-nya juga, tinggal bilang saja. Mau dilanjut ke bagian mana dulu?
