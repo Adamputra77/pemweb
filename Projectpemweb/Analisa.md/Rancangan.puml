@@ -1,0 +1,99 @@
+@startuml
+skinparam style strictuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam actorStyle awesome
+
+' ===== Aktor =====
+actor "Admin Company" as AC
+actor "Admin HRM" as AHRM
+actor "Admin LMS" as ALMS
+actor "Guru" as G
+actor "Siswa" as S
+
+' ===== Modul: Company Profile =====
+package "Company Profile (Admin Company)" {
+    usecase "Kelola Halaman Home" as UC1
+    usecase "Kelola About Us" as UC2
+    usecase "Kelola Blog & Artikel" as UC3
+    usecase "Kelola Contact Us" as UC4
+    usecase "Kelola Testimoni" as UC5
+
+    AC --> UC1
+    AC --> UC2
+    AC --> UC3
+    AC --> UC4
+    AC --> UC5
+}
+
+' ===== Modul: Human Resource Management (HRM) =====
+package "HRM System (Admin HRM)" {
+    usecase "Kelola Pegawai" as HR1
+    usecase "Kelola Departemen" as HR2
+    usecase "Kelola Cabang" as HR3
+    usecase "Kelola Absensi" as HR4
+    usecase "Kelola Gaji" as HR5
+    usecase "Kelola Cuti" as HR6
+    usecase "Kelola Event Course" as HR7
+
+    AHRM --> HR1
+    AHRM --> HR2
+    AHRM --> HR3
+    AHRM --> HR4
+    AHRM --> HR5
+    AHRM --> HR6
+    AHRM --> HR7
+}
+
+' ===== Modul: Learning Management System (LMS) =====
+package "LMS System (Admin LMS, Guru, Siswa)" {
+    usecase "Kelola Modul Pembelajaran" as LMS1
+    usecase "Kelola Quiz" as LMS2
+    usecase "Kelola Nilai Siswa" as LMS3
+    usecase "Kelola Siswa & Guru" as LMS4
+    usecase "Kelola Pembayaran Kursus" as LMS5
+    usecase "Kirim Notifikasi Email" as LMS6
+    usecase "Kirim Notifikasi WhatsApp" as LMS7
+    usecase "Generate Sertifikat Siswa" as LMS8
+
+    ALMS --> LMS1
+    ALMS --> LMS2
+    ALMS --> LMS3
+    ALMS --> LMS4
+    ALMS --> LMS5
+    ALMS --> LMS6
+    ALMS --> LMS7
+    ALMS --> LMS8
+
+    G --> LMS1
+    G --> LMS2
+    G --> LMS3
+
+    S --> LMS1 : Akses Modul
+    S --> LMS2 : Kerjakan Quiz
+    S --> LMS3 : Lihat Nilai
+    S --> LMS5 : Bayar via Midtrans
+    S --> LMS8 : Unduh Sertifikat
+}
+
+' ===== Modul: API Layer (Global Use Case) =====
+package "API Layer (All Modules)" {
+    usecase "Konsumsi REST API" as API1
+    usecase "Autentikasi Token (Sanctum)" as API2
+    usecase "Integrasi Midtrans" as API3
+    usecase "Integrasi WhatsApp API" as API4
+    usecase "Integrasi Email SMTP" as API5
+
+    ALMS --> API1
+    ALMS --> API2
+    ALMS --> API3
+    ALMS --> API4
+    ALMS --> API5
+
+    AHRM --> API1
+    AHRM --> API2
+    AC --> API1
+}
+
+@enduml
